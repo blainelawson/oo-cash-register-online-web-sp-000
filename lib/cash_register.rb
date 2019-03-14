@@ -7,7 +7,7 @@ class CashRegister
     @@prices = []
 
     @total = 0
-    @discount = ee_discount.join("").to_f
+    @discount = ee_discount
 
     @total
   end
