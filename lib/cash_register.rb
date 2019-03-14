@@ -12,19 +12,14 @@ class CashRegister
     @total
   end
 
-  def add_item(title, price, *quantity)
-     quantity[0] ? @total += price * quantity.join("").to_f : @total += price
+  def add_item(title, price, quantity=1)
+     @total += price * quantity.join("").to_f 
      @price = price
 
-     if quantity[0]
-       quantity[0].times do
+     quantity.times do
          @@items << title
          @@prices << price
        end
-     else
-       @@items << title
-       @@prices << price
-     end
   end
 
   def apply_discount
