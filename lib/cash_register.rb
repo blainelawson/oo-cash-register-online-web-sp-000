@@ -1,10 +1,9 @@
 require "pry"
 class CashRegister
-  attr_accessor :total, :discount, :price
+  attr_accessor :total, :discount, :items, :last_transaction
 
   def initialize(ee_discount=0)
-    @@items = []
-    @@prices = []
+    @items = []
 
     @total = 0
     @discount = ee_discount
@@ -17,8 +16,7 @@ class CashRegister
      @price = price
 
      quantity.times do
-         @@items << title
-         @@prices << price
+         @items << title
        end
   end
 
